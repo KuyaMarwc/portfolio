@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --beige-light: #f8f4f0;
+      --beige-medium: #e8dfd6;
+      --beige-dark: #d6c9bc;
+      --accent-gold: #c8a97e;
+      --text-dark: #5a4e45;
+      --text-light: #8a7866;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--beige-light);
+      scroll-behavior: smooth;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+ 
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+    
+    .navbar {
+      background: rgba(248, 244, 240, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: 15px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--accent-gold) !important;
+      font-size: 1.5rem;
+    }
+    
+    .navbar-nav .nav-link {
+      color: var(--text-dark) !important;
+      font-weight: 500;
+      margin: 0 8px;
+      padding: 8px 18px !important;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-nav .nav-link:hover {
+      background-color: var(--accent-gold);
+      color: white !important;
+      transform: translateY(-2px);
+    }
+    
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--beige-light) 0%, var(--beige-medium) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .profile-img {
+      max-width: 320px;
+      border: 8px solid white;
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+    }
+    
+    .profile-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+  
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 60px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent-gold);
+    }
+    
+  
+    #about {
+      background: linear-gradient(to bottom, var(--beige-light) 0%, white 100%);
+    }
+    
+    .about-content {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+    
+    .about-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+  
+    #skills {
+      background: linear-gradient(to bottom, white 0%, var(--beige-light) 100%);
+    }
+    
+    .skill-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      height: 100%;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(200, 169, 126, 0.2);
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .skill-icon {
+      font-size: 2.5rem;
+      color: var(--accent-gold);
+      margin-bottom: 20px;
+    }
+    
+    .skill-badge {
+      background: var(--beige-medium);
+      color: var(--text-dark);
+      padding: 8px 16px;
+      border-radius: 50px;
+      margin: 5px;
+      display: inline-block;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    .skill-badge:hover {
+      background: var(--accent-gold);
+      color: white;
+      transform: scale(1.05);
+    }
+    
+  
+    #projects {
+      background: linear-gradient(to bottom, var(--beige-light) 0%, white 100%);
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      height: 100%;
+      border: 1px solid rgba(200, 169, 126, 0.15);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .project-content {
+      padding: 25px;
+    }
+    
+    .project-tech {
+      font-size: 0.9rem;
+      color: var(--accent-gold);
+      font-weight: 500;
+    }
+    
+  
+    #contact {
+      background: linear-gradient(to bottom, white 0%, var(--beige-medium) 100%);
+    }
+    
+    .contact-card {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      height: 100%;
+      border: 1px solid rgba(200, 169, 126, 0.2);
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-icon {
+      font-size: 2rem;
+      color: var(--accent-gold);
+      margin-bottom: 15px;
+    }
+    
+  
+    footer {
+      background: var(--text-dark);
+      color: var(--beige-light);
+      padding: 30px 0;
+      text-align: center;
+    }
+    
+    
+    
+    @media (max-width: 768px) {
+      .profile-img {
+        max-width: 250px;
+        margin-top: 30px;
+      }
+      
+      section {
+        padding: 70px 0;
+      }
+      
+      .about-content, .skill-card, .project-card, .contact-card {
+        padding: 25px;
+      }
+      
+      .math-bg {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-square-root-alt me-2"></i>Portfolio
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header id="home">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-3 fw-bold mb-3">Hello, I'm <span class="text-accent">Marc Ian M. Garcia</span></h1>
+          <p class="lead mb-4">Aspiring Web Developer and Cloud Engineer | IT Networking Student</p>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#projects" class="btn btn-primary btn-lg px-4 py-2">View My Work</a>
+            <a href="#contact" class="btn btn-outline-dark btn-lg px-4 py-2">Get In Touch</a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="my-photo.png" alt="Marc Ian Garcia" class="profile-img rounded-circle">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title text-center">About Me</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="about-content">
+            <p class="lead">
+              I am a passionate IT Networking student with a keen interest in web development and cloud engineering. 
+              I enjoy creating websites, configuring networks, and exploring the latest technologies in the IT field.
+            </p>
+            <p>
+              Beyond software and networking, I thrive on collaboration, problem-solving, and turning imaginative concepts 
+              into practical digital solutions. My goal is to build a strong foundation in development and cloud engineering 
+              to prepare for a future where I can contribute meaningfully to the tech industry.
+            </p>
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="fas fa-user me-2 text-accent"></i> <strong>Age:</strong> 21</li>
+                  <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-accent"></i> <strong>Location:</strong> San Pablo, Laguna</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="fas fa-graduation-cap me-2 text-accent"></i> <strong>Year Level:</strong> 3rd Year</li>
+                  <li class="mb-2"><i class="fas fa-laptop-code me-2 text-accent"></i> <strong>Course:</strong> BSIT Major in Networking</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title text-center">My Skills</h2>
+      <div class="row g-4">
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h4 class="mb-4">Programming Languages</h4>
+            <div>
+              <span class="skill-badge">C++</span>
+              <span class="skill-badge">Java</span>
+              <span class="skill-badge">PHP</span>
+              <span class="skill-badge">HTML/CSS</span>
+              <span class="skill-badge">JavaScript</span>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h4 class="mb-4">Tools & Workflow</h4>
+            <div>
+              <span class="skill-badge">GitHub</span>
+              <span class="skill-badge">VS Code</span>
+              <span class="skill-badge">Bootstrap</span>
+              <span class="skill-badge">Canva</span>
+              <span class="skill-badge">Eclipse</span>
+              <span class="skill-badge">Google Workspace</span>
+              <span class="skill-badge">Slack</span>
+              <span class="skill-badge">Discord</span>
+              <span class="skill-badge">Packet Tracer</span>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4 class="mb-4">Other Skills</h4>
+            <p class="mb-3">Beyond technical expertise, I also excel in:</p>
+            <div>
+              <span class="skill-badge">Teamwork</span>
+              <span class="skill-badge">Problem-Solving</span>
+              <span class="skill-badge">Creativity</span>
+              <span class="skill-badge">Adaptability</span>
+              <span class="skill-badge">Time Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title text-center">My Projects</h2>
+      <div class="row g-4">
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-content">
+              <h4 class="mb-3">Smart Parking System</h4>
+              <p class="text-dark">A Java-based smart parking system that helps users find available parking spots in real-time with a user-friendly GUI and efficient algorithms.</p>
+              <p class="project-tech"><strong>Technologies:</strong> Java, JavaScript, CSS, Eclipse, HTML</p>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-content">
+              <h4 class="mb-3">Student E-poll System</h4>
+              <p class="text-dark">An online voting system for schools that eliminates the need for physical voting with user-friendly interface and real-time progress counting.</p>
+              <p class="project-tech"><strong>Technologies:</strong> Java, JavaScript, CSS, Eclipse, HTML</p>
+            </div>
+          </div>
+        </div>
+        
+    
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-content">
+              <h4 class="mb-3">E-horizon Community</h4>
+              <p class="text-dark">A Reddit-like platform where students can learn about environmental issues and collaborate on solutions together.</p>
+              <p class="project-tech"><strong>Technologies:</strong> PHP, JavaScript, CSS, HTML, MySQL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title text-center">Contact Me</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fab fa-facebook"></i>
+            </div>
+            <h5>Facebook</h5>
+            <p class="mb-0">Marc Ian Garcia</p>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <h5>Instagram</h5>
+            <p class="mb-0">@ianngarciaaa</p>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h5>Email</h5>
+            <p class="mb-0">kuyamarwc.9@gmail.com</p>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h5>Phone</h5>
+            <p class="mb-0">09948766399</p>
+          </div>
+        </div>
+        
+        <div class="col-12 mt-4">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <h5>GitHub</h5>
+            <p class="mb-0">github.com/KuyaMarwc</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Marc Ian Garcia. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(248, 244, 240, 0.98) !important';
+        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+      } else {
+        navbar.style.background = 'rgba(248, 244, 240, 0.95) !important';
+        navbar.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+      }
+    });
+    
+   
+  </script>
+</body>
+</html>
