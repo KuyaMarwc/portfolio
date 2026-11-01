@@ -200,6 +200,26 @@
       font-weight: 500;
     }
 
+    .project-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .project-highlights {
+      margin: 15px 0 0 0;
+      padding-left: 18px;
+      color: var(--text-dark);
+      font-size: 0.96rem;
+    }
+
+    .project-highlights li {
+      margin-bottom: 8px;
+    }
+
     #certifications {
       background: linear-gradient(to bottom, white 0%, var(--beige-light) 100%);
     }
@@ -221,9 +241,18 @@
     }
 
     .certificate-icon {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: var(--accent-gold);
       margin-bottom: 15px;
+    }
+
+    .certificate-brand {
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 8px;
+      font-weight: 600;
     }
 
     .cert-badge {
@@ -235,6 +264,24 @@
       display: inline-block;
       font-size: 0.8rem;
       font-weight: 600;
+    }
+
+    .credential-btn {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 8px 16px;
+      border-radius: 25px;
+      background: var(--accent-gold);
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .credential-btn:hover {
+      background: #b79363;
+      color: white;
+      transform: translateY(-2px);
     }
 
     #contact {
@@ -401,17 +448,18 @@
 
         <div class="col-md-6 col-lg-3">
           <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-tools"></i></div>
-            <h4 class="mb-4">Tools & Workflow</h4>
+            <div class="skill-icon"><i class="fas fa-server"></i></div>
+            <h4 class="mb-4">Cloud & IoT</h4>
             <div>
-              <span class="skill-badge">GitHub</span>
-              <span class="skill-badge">Git</span>
-              <span class="skill-badge">VS Code</span>
-              <span class="skill-badge">Eclipse</span>
-              <span class="skill-badge">Bootstrap</span>
-              <span class="skill-badge">Firebase</span>
-              <span class="skill-badge">Canva</span>
-              <span class="skill-badge">Packet Tracer</span>
+              <span class="skill-badge">AWS</span>
+              <span class="skill-badge">Cloud Foundations</span>
+              <span class="skill-badge">RFID Applications</span>
+              <span class="skill-badge">IoT</span>
+              <span class="skill-badge">Internet of Things</span>
+              <span class="skill-badge">SDLC</span>
+              <span class="skill-badge">MySQL</span>
+              <span class="skill-badge">Data Architecture</span>
+              <span class="skill-badge">Web Development</span>
             </div>
           </div>
         </div>
@@ -441,9 +489,27 @@
         <div class="col-md-6 col-lg-4">
           <div class="project-card">
             <div class="project-content">
-              <h4 class="mb-3">Smart Parking System</h4>
-              <p class="text-dark">A Java-based smart parking system designed to help users find available parking spaces in real-time using a user-friendly interface and efficient logic.</p>
-              <p class="project-tech"><strong>Essential Skills & Tools:</strong> Java, OOP, GUI Design, JavaScript, HTML/CSS, Data Structures</p>
+              <div class="project-meta">Dec 2025 – Feb 2026</div>
+              <h4 class="mb-3">Smart Parking System with Real-Time Monitoring & Automated Gate Control</h4>
+              <p class="text-dark">Developed an end-to-end IoT and web-based Smart Parking System for Batangas State University - Lipa to address peak-hour congestion, manual logging inefficiencies, and campus security.</p>
+              <ul class="project-highlights">
+                <li>Automated Access Control using RFID for gate entry and exit.</li>
+                <li>Real-Time Occupancy Tracking through IoT sensors and centralized database updates.</li>
+                <li>Administrative dashboard for slot monitoring, access management, and reporting.</li>
+                <li>Managed the full SDLC from requirements analysis to deployment planning with secure credential and RFID data handling.</li>
+              </ul>
+              <p class="project-tech mt-3"><strong>Essential Skills & Tools:</strong> RFID Applications, Internet of Things (IoT), SDLC, MySQL, Data Architecture, Web Development, Database Design, Embedded Systems, Real-Time Monitoring, Access Control Systems</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-meta">Aug 2026 – Present</div>
+              <h4 class="mb-3">Corn Leaf Disease Detection System</h4>
+              <p class="text-dark">A machine learning project that detects corn leaf diseases using computer vision and object detection to help identify issues in crops efficiently.</p>
+              <p class="project-tech"><strong>Essential Skills & Tools:</strong> Python, OpenCV, YOLOv8, Roboflow, Google Colab, Object Detection, Data Annotation, Model Training, Machine Learning, Computer Vision</p>
             </div>
           </div>
         </div>
@@ -471,9 +537,9 @@
         <div class="col-md-6 col-lg-4">
           <div class="project-card">
             <div class="project-content">
-              <h4 class="mb-3">Corn Leaf Disease Detection System</h4>
-              <p class="text-dark">A machine learning project that detects plant diseases using computer vision and object detection to help identify issues in corn leaves efficiently.</p>
-              <p class="project-tech"><strong>Essential Skills & Tools:</strong> Python, OpenCV, YOLOv26, Roboflow, Google Colab, Object Detection, Data Annotation, Model Training</p>
+              <h4 class="mb-3">Smart Parking System</h4>
+              <p class="text-dark">A Java-based smart parking system designed to help users find available parking spaces in real-time using a user-friendly interface and efficient logic.</p>
+              <p class="project-tech"><strong>Essential Skills & Tools:</strong> Java, OOP, GUI Design, JavaScript, HTML/CSS, Data Structures</p>
             </div>
           </div>
         </div>
@@ -487,26 +553,29 @@
       <div class="row g-4">
         <div class="col-md-6 col-lg-4">
           <div class="certificate-card">
-            <div class="certificate-icon"><i class="fas fa-certificate"></i></div>
-            <h4>Certificate 1</h4>
-            <p class="mb-0">Add your certificate title here</p>
-            <span class="cert-badge">Issuer / Platform</span>
+            <div class="certificate-icon"><i class="fab fa-aws"></i></div>
+            <div class="certificate-brand">Amazon Web Services (AWS)</div>
+            <h4>AWS Academy Graduate - Cloud Foundations - Training Badge</h4>
+            <p class="mb-0">Issued May 2026</p>
+            <a href="#" class="credential-btn">Show Credential</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="certificate-card">
+            <div class="certificate-icon"><i class="fab fa-redhat"></i></div>
+            <div class="certificate-brand">Red Hat</div>
+            <h4>Red Hat OpenShift Development I: Introduction to Containers with Podman (DO188 - RHA) - Ver. 4.18</h4>
+            <p class="mb-0">Issued Jul 2026</p>
+            <a href="#" class="credential-btn">Show Credential</a>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4">
           <div class="certificate-card">
             <div class="certificate-icon"><i class="fas fa-certificate"></i></div>
-            <h4>Certificate 2</h4>
-            <p class="mb-0">Add your certificate title here</p>
-            <span class="cert-badge">Issuer / Platform</span>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="certificate-card">
-            <div class="certificate-icon"><i class="fas fa-certificate"></i></div>
-            <h4>Certificate 3</h4>
+            <div class="certificate-brand">Portfolio</div>
+            <h4>Certificate Placeholder</h4>
             <p class="mb-0">Add your certificate title here</p>
             <span class="cert-badge">Issuer / Platform</span>
           </div>
